@@ -1,3 +1,9 @@
+/* TODO :
+- after picture formatting into center of grid cell
+- line up bottom sidebar links and make them same width
+- make those links clickable on ul not just ul a
+- make sizing responsive for title fontsize and mainsupporting components and bottom sidebar */
+
 @import url('https://fonts.googleapis.com/css?family=Lora|Montserrat');
 
 * {
@@ -22,11 +28,6 @@ body {
   background-color: white;
   line-height: 1.5em;
 }
-
-/* .intro::before {
-  content:url("zenleaf.png");
-
-} */
 
 /* INTRO */
 .intro header {
@@ -99,7 +100,6 @@ body {
 }
 
 .main-supporting .explanation {
-  /* background-color: #77CBB9; */
   background-color: rgba(109, 201, 181, 0.7);
   color: white;
   display: inline-block;
@@ -128,7 +128,6 @@ body {
 }
 
 .main-supporting .benefits {
-  /* background-color: rgb(255, 203, 3, .5); */
   background-color: #ffe88e;
   color: rgba(114, 114, 114);
   padding: 1em 10%;
@@ -258,8 +257,7 @@ padding: 1em 2em;
 }
 
 .sidebar .wrapper .design-archives {
-  /* background-color: rgba(119, 165, 91, 0.7); */
-  padding: 0 2em;
+  padding: 0 1em;
   color: white;
   display: flex;
   flex-flow: row wrap;
@@ -299,7 +297,7 @@ border-color: #ffa260;
 
 .sidebar .wrapper .zen-resources {
   color: white;
-  padding: 0 2em;
+  padding: 0 1em;
   display: flex;
   flex-flow: row wrap;
 }
