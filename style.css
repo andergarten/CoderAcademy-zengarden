@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Montserrat');
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  background-color: white;
+  line-height: 1.5em;
+}
+
+/* .intro::before {
+  content:url("zenleaf.png");
+
+} */
+
+/* INTRO */
+.intro header {
+  background: url("zenleaf.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: right;
+  z-index: -1;
+}
+.intro header h1 {
+  font-family: "Lora", serif;
+  font-size: 7em;
+  color: white;
+  text-align: center;
+  padding: 4em 0 0 0;
+  margin: auto;
+  line-height: .8em;
+}
+
+.intro header h2 {
+  font-size: 2em;
+  padding-bottom: 7em;
+  margin: auto;
+  font-weight: 700;
+  color: rgb(255, 255, 255, 0.7);
+  text-align: center;
+  vertical-align: text-bottom;
+}
+
+.intro .summary {
+  color: rgb(66, 66, 66);
+  font-style: italic;
+  text-align: center; 
+  border-radius: 2px;
+  padding: 1em 4em;
+  margin: 0 10%;
+  box-sizing: border-box;
+  position: relative;
+  top: -6em;
+  background-color: white;
+}
+
+.intro .summary a {
+  color:rgb(84, 161, 189);
+}
+
+.intro .summary a:hover {
+  color:black;
+}
+
+.intro .summary p {
+  text-align: left;
+}
+
+.intro .preamble {
+  background-color: white;
+  color: black;
+  margin: 0 10%;
+  position: relative;
+  top: -4em;
+}
+
+/* END INTRO */
+
+.main-supporting {
+  display: grid;
+  grid-template-columns: repeat( 3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "exp par ben" "req req req";
+}
+
+.main-supporting .explanation {
+  /* background-color: #77CBB9; */
+  background-color: rgba(109, 201, 181, 0.7);
+  color: white;
+  display: inline-block;
+  padding: 1em 10%;
+  grid-area: exp;
+}
+
+.main-supporting .participation {
+  color: white;
+  background-color: rgb(204, 92, 92, .7);
+  display: inline-block;
+  padding: 1em 10%;
+  grid-area: par;
+}
+
+.main-supporting .participation a {
+  color: rgb(102, 102, 102)
+}
+
+.main-supporting .requirements a {
+  color: rgb(102, 102, 102)
+}
+
+.main-supporting .requirements [role=contentinfo] {
+  font-style: italic;
+}
+
+.main-supporting .benefits {
+  /* background-color: rgb(255, 203, 3, .5); */
+  background-color: #ffe88e;
+  color: rgba(114, 114, 114);
+  padding: 1em 10%;
+  grid-area: ben;
+}
+
+.main-supporting .benefits p {
+  margin-bottom: 5em;
+}
+.main-supporting .benefits::after {
+  background-image: url("bonsaiyellow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 100%; 
+  height: 40%;
+  content:"";
+  grid-area: ben;
+  /* align flexend right somehow */
+}
+
+.main-supporting .requirements {
+grid-area: req;
+background-color: rgb(130, 68, 152, .6);
+color: white;
+padding: 1em 2em;
+}
+
+.main-supporting footer {
+  padding-top: 1em;
+  grid-area: 3 / 1 / 4 / 4;
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(59, 59, 59);
+}
+
+.main-supporting footer a{
+  color:#7ac545;
+  background: none;
+  border: 2px solid;
+  border-radius: 0px;
+  line-height: 1;
+  margin: 0.5em;
+  padding: .5em 1.5em;
+}
+
+.main-supporting footer a:hover{
+  transform: translateY(-.2em);
+  box-shadow: 0 0.5em 0.5em -0.4em #7ac545;
+  background-color: #9fda75;
+  color: white;
+}
+/* sidebar */
+.sidebar {
+  text-decoration: none;
+  background-color: rgb(59, 59, 59);
+  z-index: -1;
+}
+
+.design-selection {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background-color: rgba(255, 198, 190);
+  border-radius: 1px;
+  width: 15em;
+  padding-top: .5em;
+  display: inline-block;
+}
+
+.design-selection .select {
+  text-align: center;
+}
+
+.design-selection nav {
+  background-color: rgb(255, 210, 204);
+  width: 15em;
+  max-height: 95vh;
+  overflow: auto;
+}
+
+.design-selection nav ul {
+  list-style: none;
+  padding: 0 1em;
+  text-align: right;
+}
+
+.design-selection nav ul li {
+  font-style: italic;
+  padding-bottom: .5em;
+}
+
+.design-selection nav ul li .design-name {
+  border-radius: 0px;
+  background-color: #bedfff;
+  color: rgb(73, 73, 73);
+  padding: 1.5em 1em;
+  margin: auto;
+  line-height: 1em;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  font-style: normal;
+}
+
+.design-selection nav ul li .design-name:hover {
+  background-color: rgb(102, 102, 102);
+  color: white;
+}
+
+.design-selection nav ul li .designer-name {
+  color: rgb(102, 102, 102);
+}
+
+.design-selection nav {
+  display: none;
+  position: absolute;
+}
+
+.design-selection:hover nav {display: block;}
+
+.design-selection:hover {background-color: rgb(255, 160, 160)}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.sidebar .wrapper .design-archives {
+  /* background-color: rgba(119, 165, 91, 0.7); */
+  padding: 0 2em;
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.sidebar .wrapper .design-archives nav ul{
+display: flex;
+flex-direction: row;
+}
+
+.sidebar .wrapper .design-archives nav ul li{
+  color:#ffa260;
+  background: none;
+  border: 2px solid;
+  border-radius: 0px;
+  line-height: 1;
+  margin: 0.5em;
+  padding: .5em 1.5em;
+  vertical-align: middle;
+}
+
+.sidebar .wrapper .design-archives nav ul li:hover {
+transform: translateY(-.2em);
+box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
+background-color: #ffa260;
+color: white;
+border-color: #ffa260;
+}
+
+.sidebar .wrapper .design-archives nav ul li a {
+  color: inherit;
+}
+
+.sidebar .wrapper * {
+  align-self: center;
+}
+
+.sidebar .wrapper .zen-resources {
+  color: white;
+  padding: 0 2em;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.sidebar .wrapper .zen-resources * {
+  margin: 0;
+}
+
+.sidebar .wrapper .zen-resources ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar .wrapper .zen-resources ul li {
+  color:#b974e7;
+  background: none;
+  border: 2px solid;
+  border-radius: 0px;
+  line-height: 1;
+  margin: 0.5em;
+  padding: .5em 1.5em;
+}
+
+.sidebar .wrapper .zen-resources ul li:hover {
+  transform: translateY(-.2em);
+  box-shadow: 0 0.5em 0.5em -0.4em #b974e7;
+  background-color: #b974e7;
+  color: white;
+  border-color: #b974e7;
+}
+
+.sidebar .wrapper .zen-resources ul li a{
+  color: inherit;
+}
