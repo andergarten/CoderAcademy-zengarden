@@ -1,11 +1,7 @@
 /* TODO :
 - after picture formatting into center of grid cell
-- line up bottom sidebar links and make them same width
 - make those links clickable on ul not just ul a
-- make sizing responsive for 
-	- title fontsize and 
-	- mainsupporting components DONE
-	- bottom sidebar */
+*/
 
 @import url('https://fonts.googleapis.com/css?family=Lora|Montserrat');
 
@@ -65,7 +61,7 @@ body {
   font-style: italic;
   text-align: center; 
   border-radius: 2px;
-  padding: 1em 4em;
+  padding: 1em 6%;
   margin: 0 10%;
   box-sizing: border-box;
   position: relative;
@@ -200,6 +196,7 @@ padding: 1em 2em;
   width: 15em;
   padding-top: .5em;
   display: inline-block;
+  transition: box-shadow .25s;
 }
 
 .design-selection .select {
@@ -253,18 +250,25 @@ padding: 1em 2em;
 
 .design-selection:hover nav {display: block;}
 
-.design-selection:hover {background-color: rgb(255, 160, 160)}
+.design-selection:hover {
+  /* background-color: rgb(255, 160, 160) */
+  box-shadow: inset -15em 0 0 0 rgb(255, 160, 160);
+}
 
 .wrapper {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
+  display: flex;
+  flex-flow: column wrap;
 }
 
 .sidebar .wrapper .design-archives {
   padding: 0 1em;
   color: white;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
+}
+
+.sidebar .wrapper .design-archives * {
+  margin: 0;
 }
 
 .sidebar .wrapper .design-archives nav ul{
@@ -297,15 +301,11 @@ padding: 1em 2em;
   color: inherit;
 }
 
-.sidebar .wrapper * {
-  align-self: center;
-}
-
 .sidebar .wrapper .zen-resources {
   color: white;
   padding: 0 1em;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
 }
 
 .sidebar .wrapper .zen-resources * {
@@ -344,5 +344,32 @@ padding: 1em 2em;
 @media screen and (max-width: 800px) {
   .main-supporting {
     grid-template-areas: "exp exp exp" "par par par" "ben ben ben" "req req req" "foo foo foo";
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .intro header h1 {
+    font-size: 5em;
+  }
+  .intro header h2 {
+    padding-bottom: 5em;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .intro header h1 {
+    font-size: 4em;
+  }
+  .intro header h2 {
+    padding-bottom: 5em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .intro header h1 {
+    font-size: 3em;
+  }
+  .intro header h2 {
+    font-size: 1.5em;
   }
 }
