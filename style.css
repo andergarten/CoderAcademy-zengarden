@@ -2,7 +2,10 @@
 - after picture formatting into center of grid cell
 - line up bottom sidebar links and make them same width
 - make those links clickable on ul not just ul a
-- make sizing responsive for title fontsize and mainsupporting components and bottom sidebar */
+- make sizing responsive for 
+	- title fontsize and 
+	- mainsupporting components DONE
+	- bottom sidebar */
 
 @import url('https://fonts.googleapis.com/css?family=Lora|Montserrat');
 
@@ -96,7 +99,7 @@ body {
   display: grid;
   grid-template-columns: repeat( 3, 1fr);
   grid-template-rows: auto;
-  grid-template-areas: "exp par ben" "req req req";
+  grid-template-areas: "exp par ben" "req req req" "foo foo foo";
 }
 
 .main-supporting .explanation {
@@ -158,8 +161,9 @@ padding: 1em 2em;
 
 .main-supporting footer {
   padding-top: 1em;
-  grid-area: 3 / 1 / 4 / 4;
+  grid-area: foo;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-end;
   background-color: rgb(59, 59, 59);
 }
@@ -264,11 +268,11 @@ padding: 1em 2em;
 }
 
 .sidebar .wrapper .design-archives nav ul{
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-flow: row wrap;
 }
 
-.sidebar .wrapper .design-archives nav ul li{
+.sidebar .wrapper .design-archives nav ul li {
   color:#ffa260;
   background: none;
   border: 2px solid;
@@ -277,14 +281,16 @@ flex-direction: row;
   margin: 0.5em;
   padding: .5em 1.5em;
   vertical-align: middle;
+  width: 15em;
+  text-align: center;
 }
 
 .sidebar .wrapper .design-archives nav ul li:hover {
-transform: translateY(-.2em);
-box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
-background-color: #ffa260;
-color: white;
-border-color: #ffa260;
+  transform: translateY(-.2em);
+  box-shadow: 0 0.5em 0.5em -0.4em #ffa260;
+  background-color: #ffa260;
+  color: white;
+  border-color: #ffa260;
 }
 
 .sidebar .wrapper .design-archives nav ul li a {
@@ -308,7 +314,7 @@ border-color: #ffa260;
 
 .sidebar .wrapper .zen-resources ul {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
 }
 
 .sidebar .wrapper .zen-resources ul li {
@@ -319,6 +325,8 @@ border-color: #ffa260;
   line-height: 1;
   margin: 0.5em;
   padding: .5em 1.5em;
+  width: 15em;
+  text-align: center;
 }
 
 .sidebar .wrapper .zen-resources ul li:hover {
@@ -331,4 +339,10 @@ border-color: #ffa260;
 
 .sidebar .wrapper .zen-resources ul li a{
   color: inherit;
+}
+
+@media screen and (max-width: 800px) {
+  .main-supporting {
+    grid-template-areas: "exp exp exp" "par par par" "ben ben ben" "req req req" "foo foo foo";
+  }
 }
